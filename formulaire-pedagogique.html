@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulaire-pedagogique.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Tambedou_Adolphe</h2>
+        <nav class="navigation">
+            <a href="formulaire-login.html">Acceuil</a>
+            <a href="#"></a>
+            <a href="formulaire-login.html">Login</a>
+        </nav>
+    </header>
+    
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>pedagogique Register</h2><br><br>
+            <form action="#">
+
+                <label>Departement </label><div class="input-box" id="yes" >
+                    <select id="departement" onchange="populateFiliere()">
+                        <option value="Chimique">Génie Chimique.</option>
+                        <option value="Civil">Génie Civil.</option>
+                        <option value="Electrique">Génie Electrique.</option>
+                        <option value="informatique">Génie Informatique.</option>
+                        <option value="Mécanique">Génie Mécanique.</option>
+                        <option value="Gestion">Gestion.</option>
+                      </select>
+                </div> 
+                <script>
+                    function populateFiliere() {
+  var departement = document.getElementById("departement");
+  var filiere = document.getElementById("filiere");
+
+  // Vider la liste déroulante de filières
+  filiere.innerHTML = "";
+
+  if (departement.value === "") {
+    var defaultOption = document.createElement("option");
+    defaultOption.text = "-- Choisissez d'abord un département --";
+    filiere.add(defaultOption);
+  } else {
+    // Remplir la liste déroulante de filières en fonction du département sélectionné
+    if (departement.value === "Gestion") {
+      var filieres = ["Gestion 1", "Gestion 2", "Gestion 3"];
+    } else if (departement.value === "Chimique") {
+      var filieres = ["IA", "chimie 1", "chimie 2"];
+    } else if (departement.value === "Civil") {
+      var filieres = ["Civil 1", "Civil 2", "Civil 3"];
+    }else if (departement.value === "Electrique") {
+      var filieres = ["Elec 1", "Elec 2", "Elec 3"];
+    }else if (departement.value === "informatique") {
+      var filieres = ["Inf", "T.R"];
+    }else if (departement.value === "Mécanique") {
+      var filieres = ["meca 1", "meca 2", "meca 3"];
+    }
+
+    // Ajouter les options de filières à la liste déroulante
+    for (var i = 0; i < filieres.length; i++) {
+      var option = document.createElement("option");
+      option.text = filieres[i];
+      filiere.add(option);
+    }
+  }
+}
+                </script>
+                <label>Cycle</label><div class="input-box" id="yes" >
+                    <select>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                      </select>
+                </div> 
+
+                <label>Niveau</label><div class="input-box" id="yes" >
+                    <select>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                      </select>
+                </div> 
+
+                
+
+                <label>Filière</label>
+                <div class="input-box" id="yes" >
+                    <select id="filiere" >
+                        <option value="choisir une option"></option>
+                      </select>
+                </div> 
+
+                <div id="annuler">
+                    <button type="submit" class="btn">Valider</button>
+                    <button type="submit" class="btn">Annuler</button>
+                    </div>
+                 
+            </form><br>
+        </div>
+    </div>
+
+    
+</body>      
+</html>
